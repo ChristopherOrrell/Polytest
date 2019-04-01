@@ -9,21 +9,21 @@ class Contact extends Model
 {
   public function address()
   {
-      return $this->hasOne('App\Address','addressable_id');
+      return $this->hasOne('App\Address','contact_id');
   }
 
   public function customer()
   {
-      return $this->address()->where('addressable_type', 'customer');
+      return $this->address()->where('type', 'customer');
   }
 
   public function billing()
   {
-      return $this->address()->where('addressable_type', 'billing');
+      return $this->address()->where('type', 'billing');
   }
 
   public function shipping()
   {
-      return $this->address()->where('addressable_type', 'shipping');
+      return $this->address()->where('type', 'shipping');
   }
 }

@@ -124,8 +124,8 @@ class AddressesTableSeeder extends Seeder
 
     foreach ($addresses as $address) {
         DB::table('addresses')->insert([
-                    'addressable_id' => $address['customer_id'],
-                    'addressable_type' => $address['customer_type'],
+                    'contact_id' => $address['customer_id'],
+                    'type' => $address['customer_type'],
                     'firstname' => $address['firstname'],
                     'lastname' => $address['lastname'],
                     'address' => $address['address'],
